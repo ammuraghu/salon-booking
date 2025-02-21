@@ -1,0 +1,45 @@
+{% extends 'userindex.html' %}
+{% load static %}
+{% block content %}
+<div class="slide-one-item home-slider owl-carousel">
+   
+    <div class="site-blocks-cover inner-page-cover" style="background-image: url({% static 'images/hd2.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+  
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="text-white font-weight-light mb-2 display-1">about US</h2>
+  
+            
+          </div>
+        </div>
+      </div>
+    </div>  
+  
+  </div>
+  <div class="site-section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-5">
+          <img src="{% static 'images/person_1.jpg' %}" alt="Image" class="img-md-fluid">
+        </div>
+        <div class="col-lg-6 bg-white p-md-5 align-self-center">
+          <p class="text-black lead"><em>We providing Salon braches,details and bookings by user concern.it's a user friendly site that helpful to people who needs to be get charming.</em></p>
+          <p class="text-black lead"><em>A beauty salon or beauty parlor is an establishment that provides cosmetic treatments for people. Other variations of this type of business include hair salons, spas, day spas, and medical spas.</em></p>
+           <p class="text-black lead"><em>Hair cut is generally offered in beauty salons. Massage for the body is a beauty treatment, with various techniques offering benefits to the skin and increasing mental well-being.Hair removal is offered at some beauty salons through treatments such as waxing and threading. </em></p>
+           <p class="text-black lead"><em>Another popular beauty treatment specific to the face is known as a facial. Specialized beauty salons known as nail salons offer treatments such as manicures and pedicures for the nails</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="mb-4 text-black">Grab your Style</h2>
+          <p class="mb-0"><a href="{% url 'viewserv' sal='full' %}" class="btn btn-primary py-3 px-5 text-white">Book Our Services Now</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

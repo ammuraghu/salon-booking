@@ -1,0 +1,50 @@
+{% extends 'userindex.html' %}
+{% load static %}
+{% block content %}
+<div class="slide-one-item home-slider owl-carousel">
+   
+  <div class="site-blocks-cover inner-page-cover" style="background-image: url({% static 'images/img_1.jpg' %});" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row align-items-center justify-content-center text-center">
+
+        <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+          <h2 class="text-white font-weight-light mb-4 display-1 line-height-1">BRANCHESS</h2>
+
+          <p><a href="{% url 'viewserv' sal='full' %}" class="btn btn-black py-3 px-5">Book Now!</a></p>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="site-section">
+    <div class="container">
+     
+      <div class="row">
+        {% for i in branchhstore %}
+        <div class="col-md-6 col-lg-4 text-center mb-5 mb-lg-5">
+          <div class="h-100 bg-light site-block-feature-7">
+            <img src="{{i.Image.url}}" alt="Image" class="img-fluid" style="width: 290px;height: 310px;">
+            <div class="p-4 p-lg-5">
+              <h3 class="text-black h4"><a href="{% url 'viewsalons' branch=i.Name %}">{{i.Name}}</a></h3>
+              
+              
+            </div>
+          </div>
+        </div>
+       
+      {% endfor %} 
+          
+      </div>
+    </div>
+  </div>
+  <div class="site-section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="mb-4 text-black">Hey, Stylish you</h2>
+          <p class="mb-0"><a href="{% url 'viewsalons' branch='all' %}" class="btn btn-primary py-3 px-5 text-white">Visit Our Salons Now</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

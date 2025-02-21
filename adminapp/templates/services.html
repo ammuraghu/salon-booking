@@ -1,0 +1,48 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+<form type="" action="{% url 'servstore' %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="card-body">
+      <div class="form-group">
+        <label for="serv">Service</label>
+        <input type="text" class="form-control" id="serv"  name="serv">
+      </div>
+      <div class="form-group">
+        <label for="saloon">Saloon</label>
+        <select name="saloon" id="saloon">
+         {% for i in down %}
+         <option>{{i.Sname}}</option>
+         <option>{{i.Branch}}</option>
+         
+         {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price"  name="price">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description"  name="description">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="iimage" name="iimage">
+            <label class="custom-file-label" for="iimage">Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <span class="input-group-text">in</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">REGISTER</button>
+    </div>
+  </form>
+{% endblock %}

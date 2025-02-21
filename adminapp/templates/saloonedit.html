@@ -1,0 +1,44 @@
+{% extends 'adminindex.html' %}
+{% block content %}
+{% for i in saedit %}
+<form type="" action="{% url 'saloostore'  id=i.id %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <div class="card-body">
+      <div class="form-group">
+        <label for="sname">Saloon Name</label>
+        <input type="text" class="form-control" id="sname"  name="sname" value="Sname">
+      </div>
+      <div class="form-group">
+        <label for="branch">Branch</label>
+        <select name="branch" id="branch">
+         {% for i in braedit %}
+         <option>{{i.Name}}</option>
+         {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description"  name="description" value="Description">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <div class="input-group">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="emage" name="emage" value="{{i.Emage}}">
+            <label class="custom-file-label" for="emage">Choose file</label>
+          </div>
+          <div class="input-group-append">
+            <span class="input-group-text">Upload</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- /.card-body -->
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary">UPDATE</button>
+    </div>
+</form>
+{% endfor %}
+{% endblock %}
