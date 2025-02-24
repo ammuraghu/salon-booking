@@ -17,5 +17,6 @@ urlpatterns = [
    path('booking/<int:id>',views.booking,name="booking"),
    path('bookstore/<int:id>',views.bookstore,name="bookstore"),
    path('history',views.history,name="history"),
+   path('second_index',views.second_index,name="second_index"),
    
 ]

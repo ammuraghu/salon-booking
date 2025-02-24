@@ -103,7 +103,7 @@ def bookstore(request,id):
         Date=request.POST['date']
         Time=request.POST['time']
         Note=request.POST['note']
-        bukstore=BOOK(Date=Date,Note=Note,Time=Time,userreg=Reg.objects.get(id=Userreg),ServiceID=SERVICES.objects.get(id=id),saloID=SALOON.objects.get(id=id))
+        bukstore=BOOK(Date=Date,Note=Note,Time=Time,userreg=Reg.objects.get(id=Userreg),ServiceID=SERVICES.objects.get(id=id))
         bukstore.save()
     return redirect('history')
 def history(request):
@@ -112,5 +112,6 @@ def history(request):
     return render(request,'history.html',{'his':his})
 
 
-
+def second_index(request):
+    return render(request, "second_index.html")
 
